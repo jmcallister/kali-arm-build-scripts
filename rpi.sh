@@ -212,8 +212,8 @@ patch -p1 --no-backup-if-mismatch < ${basedir}/../patches/kali-wifi-injection-4.
 touch .scmversion
 export ARCH=arm
 export CROSS_COMPILE=${basedir}/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/bin/arm-linux-gnueabihf-
-cp ${basedir}/../kernel-configs/rpi-4.0.config .config
-cp ${basedir}/../kernel-configs/rpi-4.0.config ../rpi-4.0.config
+cp ${basedir}/../kernel-configs/rpi-3.1B.config .config
+#cp ${basedir}/../kernel-configs/rpi-4.0.config ../rpi-4.0.config
 make -j $(grep -c processor /proc/cpuinfo)
 make modules_install INSTALL_MOD_PATH=${basedir}/root
 git clone --depth 1 https://github.com/raspberrypi/firmware.git rpi-firmware
